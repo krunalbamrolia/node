@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMBEDDED</title>
+</head>
+<body>
+    <h1>Geirn Geschehen</h1>
+
+    
+    <table border="1">
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>AGE</th>
+        
+    <% for (var s of student){ %>   
+        <tr>     
+            <td><%=s.name %></td>
+            <td><%=s.email %></td>
+            <td><%=s.age %></td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+</html>

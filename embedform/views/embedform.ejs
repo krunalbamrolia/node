@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMBEDDED FORM</title>
+</head>
+<body>
+    <h1>Geirn Geschehen</h1>
+
+    <form action="/insertRecord" method="post">
+        <label>Name :</label><input type="text" name="name"><br>
+        <label>Email :</label><input type="text" name="email"><br>
+        <label>Age :</label><input type="text" name="age"><br>
+        <input type="submit" value="submit"><br><hr>
+    </form>
+    <table border="1">
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>AGE</th>
+        
+    <% for (var s of student){ %>   
+        <tr>     
+            <td><%=s.name %></td>
+            <td><%=s.email %></td>
+            <td><%=s.age %></td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+</html>
