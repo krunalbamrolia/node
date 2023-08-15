@@ -6,18 +6,20 @@ const PORT = 1090;
 http.createServer( (req, res) => {
     let temp=""
     
+    console.log(req.url);
     switch(req.url){
+        
     case "/":
-        temp = "home.html";
+        temp = "./home.html";
     break;    
     case "/about":
-        temp = "about.html";
+        temp = "./about.html";
     break;    
     case "/service":
-        temp = "service.html";
+        temp = "./service.html";
     break;    
     default:
-        temp = "error.html";    
+        temp = "./error.html";    
     }
 
     fs.readFile(temp, (err,data)=> {
