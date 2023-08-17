@@ -1,0 +1,60 @@
+<style>
+body {
+    background-color: beige;
+    }
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    }
+</style>    
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Information</title>
+</head>
+<body>
+    <center><h1 style="text-decoration:underline; color: cadetblue;">Informationen aktualisieren</h1></center>
+
+
+    <form action="/editdata" method="post">
+        
+        <table style="line-height: 2.8;" class="center">
+            <input type="hidden" name="id" value="<%= singleobj.id %>" required/>
+            <tr>
+                <td><label>Full Name</label></td>
+                <td><input type="text" name="name" value="<%= singleobj.name %>" required></td>
+            </tr>
+            <tr>
+                <td><label>Email</label></td>
+                <td><input type="email" name="email" value="<%= singleobj.email %>" required></td>
+            </tr>
+            <tr>
+                <td><label>Age</label></td>
+                <td><input type="text" name="age" value="<%= singleobj.age %>" required></td>
+            </tr>
+            <tr>
+                <td><label>Gender</label></td>
+                <td><label><input type="radio" name="gender" value="male" required> <%= singleobj.gender === 'male' ? 'checked' : '' %> Male</label>&nbsp;&nbsp;&nbsp;
+                <label><input type="radio" name="gender" value="female" required> <%= singleobj.gender === 'female' ? 'checked' : '' %> Female</label></td>
+            </tr>
+            <tr>
+                <td><label>Contact</label></td>
+                <td><input type="tel" name="contact" value="<%= singleobj.contact %>" required></td>
+            </tr>
+            <tr>
+                <td><label>Address</label></td>
+                <td><input type="textaera" name="address" value="<%= singleobj.address %>" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="submit" name="Update"></td>  
+            </tr>
+        </table>
+    </form>
+    <footer><h3><center>gern geschehen</center></h3></footer>
+</body>
+</html>

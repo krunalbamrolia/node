@@ -1,31 +1,111 @@
+<style>
+body {
+    background-color: beige;
+}
+a{
+    text-decoration: none;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.user {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.user td,
+.user th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.user tr:nth-child(even){background-color: #f2f2f2;}
+
+.user tr:hover {background-color: #ddd;}
+
+.user th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMBEDDED FORM</title>
-</head>
+    </head>
 <body>
-    <h1>Geirn Geschehen</h1>
+    <center><h1 style="text-decoration:underline; color: cadetblue;">Persönliche Angaben</h1></center>
 
     <form action="/insertRecord" method="post">
-        <label>Name :</label><input type="text" name="name"><br>
-        <label>Email :</label><input type="text" name="email"><br>
-        <label>Age :</label><input type="text" name="age"><br>
-        <input type="submit" value="submit"><br><hr>
+        <!-- <center> -->
+        <table style="line-height: 2.8;" class="center">
+            <tr>
+                <td><label>Full Name</label></td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td><label>Email</label></td>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label>Age</label></td>
+                <td><input type="text" name="age" required></td>
+            </tr>
+            <tr>
+                <td><label>Gender</label></td>
+                <td><label><input type="radio" name="gender" value="male"><%= student.gender === 'male' ? 'checked' : '' %> Male</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="gender" value="female"><%= student.gender === 'female' ? 'checked' : '' %> Female</label></td>
+            </tr>
+            <tr>
+                <td><label>Contact</label></td>
+                <td><input type="tel" name="contact" required></td>
+            </tr>
+            <tr>
+                <td><label>Address</label></td>
+                <td><input type="textaera" name="address" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="submit"></td>  
+            </tr>
+        </table>
+        <!-- </center> -->
     </form>
-    <table border="1">
-        <th>NAME</th>
-        <th>EMAIL</th>
-        <th>AGE</th>
-        
+    <table class="user">
+        <tr style="text-decoration: solid;">
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>AGE</th>
+            <th>GENDER</th>
+            <th>CONTACT</th>
+            <th>ADDRESS</th>
+            <th colspan="2">operation</th>
+        </tr>
+
     <% for (var s of student){ %>   
-        <tr>     
+        <tr>
+            <td><%= s.id %></td>     
             <td><%=s.name %></td>
             <td><%=s.email %></td>
             <td><%=s.age %></td>
+            <td><%=s.gender %></td>
+            <td><%=s.contact %></td>
+            <td><%=s.address %></td>
+            <td><a href="/update/<%= s.id%>">Update</a></td>
+            <td><a href="/delete/<%= s.id%>">Delete</a></td>
         </tr>
         <% } %>
     </table>
+
+    <footer><h3><center>gern geschehen</center></h3></footer>
 </body>
 </html>
