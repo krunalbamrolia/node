@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 4500
+const PORT = 1999
 
 app.use(express.urlencoded());
 app.set("view engine","ejs");
@@ -63,7 +63,6 @@ app.get("/delete/:id", (req, res) => {
        res.status(404).send("Student not found");
     }
 });
-
 
 // --------------EDIT CODE------------------------------------
 app.post("/editdata",(req,res)=>{
