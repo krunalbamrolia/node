@@ -4,7 +4,7 @@ const PORT = 1999
 
 app.use(express.urlencoded());
 app.set("view engine","ejs");
-
+ 
     const student = [
         {   
             id: "09",
@@ -89,7 +89,7 @@ app.post("/editdata",(req,res)=>{
     }
 });  
 
-// --------------INSERT DATA IN TABLE------------------------------------
+// --------------INSERT DATA IN TABLE---------------------
 app.post("/insertRecord",async(req , res) =>
 {
     console.log(req.body)

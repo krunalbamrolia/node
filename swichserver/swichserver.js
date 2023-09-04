@@ -7,7 +7,7 @@ http.createServer( (req, res) => {
     let temp=""
     
     console.log(req.url);
-    switch(req.url){
+    switch(req.url) {
         
     case "/":
         temp = "./home.html";
