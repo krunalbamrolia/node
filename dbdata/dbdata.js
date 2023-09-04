@@ -22,7 +22,8 @@ app.use(bodyParser.urlencoded({
 
 app.set("view engine","ejs");
 
- app.get("/dbdata",function (req ,res) {
+//  app.get("/dbdata",function (req ,res) {
+ app.get("/",function (req ,res) {
     res.render("dbdata");
  });
 
