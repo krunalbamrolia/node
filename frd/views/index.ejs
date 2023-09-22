@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Store</title>
+</head>
+<body>
+  <h1>Book Store</h1>
+  <ul>
+    <% books.forEach(book => { %>
+      <li>
+        <strong><%= book.bookName %></strong> by <%= book.authorName %><br>
+        Price: <%= book.price %><br>
+        Description: <%= book.description %><br>
+        Edition: <%= book.edition %><br>
+        About Author: <%= book.aboutAuthor %><br>
+        Publish Date: <%= book.publish %><br>
+        Status: <%= book.status %><br>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/books/new">Add New Book</a>
+</body>
+</html>

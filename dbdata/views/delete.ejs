@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Delete User Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Delete User Data</h1>
+    <p>Are you sure you want to delete the following user?</p>
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>EMAIL</th>
+        </tr>
+        <tr>
+            <td>
+                <%= user.name %>
+            </td>
+            <td>
+                <%= user.email %>
+            </td>
+        </tr>
+    </table>
+    <form action="/delete/<%= user._id %>" method="POST">
+        <button type="submit">Confirm Delete</button>
+    </form>
+    <br>
+    <a href="/fetchdata">Cancel and Back to User Data</a>
+</body>
+
+</html>
